@@ -1,0 +1,86 @@
+[
+  {
+    "year": 2015,
+    "hotel": "City Hotel",
+    "bookings": 13682,
+    "canceled": 6004,
+    "channel_differences": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "year": 2015,
+    "hotel": "Resort Hotel",
+    "bookings": 8314,
+    "canceled": 2138,
+    "channel_differences": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "year": 2016,
+    "hotel": "City Hotel",
+    "bookings": 38140,
+    "canceled": 15407,
+    "channel_differences": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "year": 2016,
+    "hotel": "Resort Hotel",
+    "bookings": 18567,
+    "canceled": 4930,
+    "channel_differences": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "year": 2017,
+    "hotel": "City Hotel",
+    "bookings": 27508,
+    "canceled": 11691,
+    "channel_differences": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  },
+  {
+    "year": 2017,
+    "hotel": "Resort Hotel",
+    "bookings": 13179,
+    "canceled": 4054,
+    "channel_differences": [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  }
+]

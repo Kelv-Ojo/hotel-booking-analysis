@@ -1,0 +1,13 @@
+// Companion measures for a rebuilt model with the new fact table named bookings.
+// Add these one at a time. They have not been executed in Power BI Desktop here.
+Bookings = COUNTROWS(bookings)
+
+Canceled Flag = SUM(bookings[is_canceled])
+
+Cancellation Rate = DIVIDE([Canceled Flag], [Bookings])
+
+Checked Out = CALCULATE(COUNTROWS(bookings), bookings[reservation_status] = "Check-Out")
+
+No Shows = CALCULATE(COUNTROWS(bookings), bookings[reservation_status] = "No-Show")
+
+Not Canceled = [Bookings] - [Canceled Flag]

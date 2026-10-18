@@ -1,0 +1,15 @@
+{
+  "bookings": 119390,
+  "canceled": 44224,
+  "cancellation_rate": 0.37041628277075134,
+  "start": "2015-07-01",
+  "end": "2017-08-31",
+  "checked_out": 75166,
+  "no_shows": 1207,
+  "excel_aggregate_rows": 176,
+  "join_rows": 119390,
+  "hotel_rates": {
+    "City Hotel": 0.41726963317786464,
+    "Resort Hotel": 0.27763354967548676
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "rows": 119390,
+  "source_workbook": "Onyx Data DataDNA Dataset Challenge - Hotel Bookings - July 2023.xlsx",
+  "source_sheet": "hotel_bookings",
+  "source_workbook_sha256": "8cba074e328df64b50d480ebef415bfa89dd93a55b2020f41fc7d336b84dcb28",
+  "transformation": "Selected eleven original columns; added original worksheet row number. No rows removed. CSV compressed for distribution.",
+  "source": "https://doi.org/10.1016/j.dib.2018.11.126",
+  "via": "Onyx Data DataDNA July 2023 challenge workbook in existing project files",
+  "license": "Original authors: Nuno Antonio, Ana de Almeida, Luis Nunes. CC BY 4.0; see source article.",
+  "csv_zip_sha256": "f239552bb62d643b43d13c08ddb52c7916b30dbbaf1fa77fb03a9de7f619526f"
+}

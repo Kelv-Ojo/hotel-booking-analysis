@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.DS_Store
+reports/hotel.db
+reports/model/
+excel/source.json
+*.inspect.ndjson

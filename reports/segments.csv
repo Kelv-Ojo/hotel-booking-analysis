@@ -1,0 +1,23 @@
+hotel,segment,channel,bookings,canceled,mean_lead_time_days,cancellation_pct,risk_rank
+City Hotel,Groups,Direct,177,128,87.13559322033899,72.32,1
+City Hotel,Groups,TA/TO,13558,9441,197.9182032748193,69.63,2
+City Hotel,Offline TA/TO,Corporate,198,103,80.11616161616162,52.02,3
+City Hotel,Offline TA/TO,TA/TO,16498,7061,142.62898533155533,42.8,4
+City Hotel,Online TA,TA/TO,38512,14444,83.27194121312837,37.51,5
+City Hotel,Corporate,TA/TO,294,94,72.16326530612245,31.97,6
+City Hotel,Groups,Corporate,240,54,122.7875,22.5,7
+City Hotel,Aviation,Corporate,227,51,4.431718061674009,22.47,8
+City Hotel,Corporate,Corporate,2636,544,20.850910470409712,20.64,9
+City Hotel,Online TA,GDS,147,29,23.081632653061224,19.73,10
+City Hotel,Direct,Direct,6048,1051,51.65244708994709,17.38,11
+City Hotel,Complementary,Direct,437,46,10.080091533180777,10.53,12
+Resort Hotel,Groups,TA/TO,3553,1715,174.1781593019983,48.27,1
+Resort Hotel,Online TA,TA/TO,17641,6242,83.40167790941557,35.38,2
+Resort Hotel,Groups,Corporate,988,344,160.26417004048582,34.82,3
+Resort Hotel,Groups,Direct,1295,415,153.4061776061776,32.05,4
+Resort Hotel,Complementary,Direct,139,24,18.510791366906474,17.27,5
+Resort Hotel,Corporate,Corporate,2152,334,17.391263940520446,15.52,6
+Resort Hotel,Offline TA/TO,TA/TO,7448,1136,120.72073039742213,15.25,7
+Resort Hotel,Direct,Direct,6228,862,48.90976236351959,13.84,8
+Resort Hotel,Corporate,Direct,116,16,20.879310344827587,13.79,9
+Resort Hotel,Direct,TA/TO,200,9,47.725,4.5,10
