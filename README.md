@@ -38,6 +38,23 @@ erDiagram
 
 The full join preserves **119,390 rows**. Every hotel/month SQL booking and cancellation count is independently reconciled to pandas. Original worksheet row numbers serve as technical booking IDs; no claim of business-issued identifiers is made.
 
+## Worked example: cancellation rates by hotel
+
+**Question:** How do cancellation-flag rates compare across the two hotels?
+
+```sql
+SELECT h.hotel, COUNT(*) AS bookings,
+       SUM(b.is_canceled) AS canceled_flag,
+       ROUND(100.0 * SUM(b.is_canceled) / COUNT(*), 1) AS rate_pct
+FROM bookings b
+JOIN hotels h ON h.hotel_id = b.hotel_id
+GROUP BY h.hotel;
+```
+
+**Result:** City Hotel **41.7%**, Resort Hotel **27.8%**. Run the query against `reports/hotel.db` after rebuilding the analysis.
+
+**Interpretation:** the difference identifies a question to investigate; it does not establish hotel quality or a causal explanation. The flag includes no-shows, and channel and lead-time mix may differ. [Validation and limitations](reports/findings.md).
+
 ## Reproduce the analysis
 
 Python 3.10+; run from this repository's root:
@@ -66,3 +83,7 @@ Original research: Nuno Antonio, Ana de Almeida and Luis Nunes, *Hotel booking d
 This is historical educational analysis, not current hotel performance or a client engagement. Identical-looking rows are retained because valid separate bookings can share business fields. No room inventory, costs or payment data is supplied, so occupancy, realized revenue and profit cannot be calculated. Associations do not establish causal effects.
 
 [Detailed findings](reports/findings.md) · [Computed metrics](reports/metrics.json) · [Interview practice notes](docs/interview-notes.md)
+
+## Automated validation
+
+[Validation runs](https://github.com/Kelv-Ojo/hotel-booking-analysis/actions/workflows/validate.yml) rebuild the analysis and check source fingerprints and fixed-snapshot totals. See [reproduction instructions and dependency pins](REPRODUCIBILITY.md). Python checks do not certify native Excel or Power BI behaviour.
