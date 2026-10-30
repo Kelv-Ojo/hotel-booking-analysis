@@ -1,5 +1,9 @@
 # Hotel Booking Cancellation Analysis
 
+**Start here:** [Excel report](excel/Hotel%20Reporting.xlsx) → [SQL model](sql/schema.sql) → [verified metrics](reports/metrics.json)
+
+[Business question and findings](#findings) · [Excel report](#excel-report) · [SQL case study](#relational-sql-case-study) · [Reproduce](#reproduce-the-analysis) · [Sources and limits](#sources-and-limits)
+
 **Business question:** Where should a hotel team investigate cancellations, and how can it compare performance without confusing dates, booking statuses or partial years?
 
 This case study extends my existing hotel Power BI work with a reproducible SQL model and an interactive Excel report, developed with AI assistance. It uses **119,390 historical bookings** from two Portuguese hotels, with arrivals from July 2015 to August 2017.
@@ -87,3 +91,14 @@ This is historical educational analysis, not current hotel performance or a clie
 ## Automated validation
 
 [Validation runs](https://github.com/Kelv-Ojo/hotel-booking-analysis/actions/workflows/validate.yml) rebuild the analysis and check source fingerprints and fixed-snapshot totals. See [reproduction instructions and dependency pins](REPRODUCIBILITY.md). Python checks do not certify native Excel or Power BI behaviour.
+
+
+## Portfolio review notes
+
+This project is ready to review through its reconciled SQL/Python evidence and genuine Excel screenshot. Headline rates cover all 119,390 source bookings; the screenshot is one selection. Keep the no-show caveat and incomplete-year warning beside comparisons. The original Power BI report is earlier work with unresolved scope/date issues, not a repaired dashboard.
+
+## Business context and skills
+
+Hotel teams need to understand which historical booking groups warrant further investigation. This is descriptive analysis, not proof of preventable cancellations or realised revenue savings.
+
+**Skills demonstrated:** SQL joins and relational grain; Python reconciliation; Excel reporting; cancellation segmentation; clear denominators.
