@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><title>Hotel SQL query results</title><style>body{margin:0;background:#f6f8fc;color:#16233c;font:16px system-ui}main{padding:38px;width:1160px}h1{font-size:30px;font-weight:600}p{line-height:1.6}pre{background:#e6edf7;padding:24px;white-space:pre-wrap;font:14px/1.6 monospace}table{width:100%;border-collapse:collapse;background:white}th,td{padding:12px 10px;border-bottom:1px solid #d7deea;text-align:left}th{background:#183a65;color:white}td:nth-child(n+4){text-align:right}</style><main id="query-output"><h1>Hotel bookings · SQL segment comparison</h1><p>Actual SQLite output from <code>sql/segments.sql</code>, rebuilt from the verified source snapshot.<br>Showing the first 8 result rows. Cancellation flags include no-shows; minimum group size: 100 bookings.</p><pre>WITH performance AS (
+ SELECT h.hotel,s.segment,c.channel,COUNT(*) bookings,
+        SUM(b.is_canceled) canceled,AVG(b.lead_time) mean_lead_time_days
+ FROM bookings b
+ JOIN hotels h ON h.hotel_id=b.hotel_id
+ JOIN segments s ON s.segment_id=b.segment_id
+ JOIN channels c ON c.channel_id=b.channel_id
+ GROUP BY h.hotel,s.segment,c.channel
+ HAVING COUNT(*)&gt;=100
+)
+SELECT *, ROUND(100.0*canceled/bookings,2) cancellation_pct,
+       DENSE_RANK() OVER (PARTITION BY hotel ORDER BY 1.0*canceled/bookings DESC) risk_rank
+FROM performance ORDER BY hotel,risk_rank;
+</pre><table><thead><tr><th>hotel</th><th>segment</th><th>channel</th><th>bookings</th><th>canceled</th><th>mean_lead_time_days</th><th>cancellation_pct</th><th>risk_rank</th></tr></thead><tbody><tr><td>City Hotel</td><td>Groups</td><td>Direct</td><td>177</td><td>128</td><td>87.14</td><td>72.32</td><td>1</td></tr><tr><td>City Hotel</td><td>Groups</td><td>TA/TO</td><td>13558</td><td>9441</td><td>197.92</td><td>69.63</td><td>2</td></tr><tr><td>City Hotel</td><td>Offline TA/TO</td><td>Corporate</td><td>198</td><td>103</td><td>80.12</td><td>52.02</td><td>3</td></tr><tr><td>City Hotel</td><td>Offline TA/TO</td><td>TA/TO</td><td>16498</td><td>7061</td><td>142.63</td><td>42.80</td><td>4</td></tr><tr><td>City Hotel</td><td>Online TA</td><td>TA/TO</td><td>38512</td><td>14444</td><td>83.27</td><td>37.51</td><td>5</td></tr><tr><td>City Hotel</td><td>Corporate</td><td>TA/TO</td><td>294</td><td>94</td><td>72.16</td><td>31.97</td><td>6</td></tr><tr><td>City Hotel</td><td>Groups</td><td>Corporate</td><td>240</td><td>54</td><td>122.79</td><td>22.50</td><td>7</td></tr><tr><td>City Hotel</td><td>Aviation</td><td>Corporate</td><td>227</td><td>51</td><td>4.43</td><td>22.47</td><td>8</td></tr></tbody></table><p>This is a rendered query result, not a screenshot of a database IDE. The joins, group counts and ranking come from the real SQL; no results are fabricated.</p></main></html>
