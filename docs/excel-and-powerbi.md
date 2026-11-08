@@ -28,4 +28,4 @@ The PBIX, PDF and screenshot are preserved from the existing project. They are e
 6. Label 2015 and 2017 as partial years. Avoid YTD labels without a clearly selected cutoff and comparison period. Explain that canceled flags include no-shows.
 7. With all filters cleared, verify 119,390 bookings, 44,224 canceled flags, 75,166 check-outs and 1,207 no-shows. Check both hotels against reports/metrics.json.
 
-Power BI Desktop is not available in this session, so these rebuild steps and DAX measures have not been executed. No PBIX repair, service publication or live dashboard link is claimed.
+Update, 8 November 2026: Power BI Desktop was available and the original model was repaired in a separate PBIX/PBIP copy. Its native measures use hotel_bookings (the companion measures above describe an alternative normalized bookings model). See NATIVE-REPORT-REVIEW-20261108.md for executed DAX, refresh evidence and outstanding exhaustive interaction checks. No Power BI service publication is claimed.

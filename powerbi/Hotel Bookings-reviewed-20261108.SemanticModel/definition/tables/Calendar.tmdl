@@ -1,0 +1,211 @@
+table Calendar
+	lineageTag: 4f0dad94-5b3c-440b-b9dc-26246566d8c8
+
+	column Date
+		formatString: General Date
+		lineageTag: 62e3b696-5b46-42ac-ade5-edcb04994b28
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: 619e847c-f8ef-423e-a539-83c3a179c081
+			defaultHierarchy: LocalDateTable_2fb7a6e0-eae8-4ba7-b9dd-3218bedd3d28.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column MIndex
+		formatString: 0
+		lineageTag: 3b6f447e-251f-4b21-b5f1-bab99cb567a7
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MIndex]
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMIndex
+		formatString: 0
+		lineageTag: db3583d7-a8a9-4e6d-8f55-0b254a626487
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [FiscalMIndex]
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalMonth
+		lineageTag: d246dbfb-8940-4d86-b269-032ad0bb912d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [CalMonth]
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalQtr
+		lineageTag: a5dc0dce-f024-4dbd-b7ef-59148dc1a548
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [CalQtr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalYear
+		formatString: 0
+		lineageTag: bcc1d278-7019-4acd-96f0-926205c97ff2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [CalYear]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Week'
+		lineageTag: e4c6153d-95c1-4309-97db-f48fa65b7ad6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Week]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Qtr'
+		lineageTag: 4a2cd98e-09cd-428f-8d2c-5c66d14c8404
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Qtr]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		lineageTag: d797680e-ea13-457e-9710-7d29d2d682e4
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column CalWeekNo
+		formatString: 0
+		lineageTag: 360aa97d-e65b-47c7-a2d3-9a01edf29014
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [CalWeekNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weekend/Working
+		lineageTag: 436b54c4-268b-4a51-be80-ae060a294df9
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Weekend/Working]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Day
+		lineageTag: 8475a57a-e6ac-472b-838d-cc6026b6dcde
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Day]
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomDate
+		lineageTag: 69445912-8636-4f16-9ef3-43ff13e9afc0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [CustomDate]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month-Year
+		lineageTag: aefc0ac3-2e82-4a90-8b2b-f832a894f14b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month-Year]
+		sortByColumn: 'MY Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'MY Sort'
+		formatString: 0
+		lineageTag: 18d01c14-138d-4ed9-8512-97e79a5e938c
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [MY Sort]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Week-Year
+		formatString: 0
+		lineageTag: 2a07e36e-f22f-45ef-bdce-d330cf6debd6
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Week-Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source = ```
+
+
+				--Inputs--
+				VAR WeekStartsOn = "Mon"
+				VAR FiscalStartMonth = 4
+
+				--NOTE: Calendar week starts from Monday
+
+				--Calculation--
+				RETURN
+				    ADDCOLUMNS (
+				        CALENDAR(MIN(hotel_bookings[ArrivalDate]),MAX(hotel_bookings[ArrivalDate])),
+				        "MIndex", MONTH ( [Date] ),
+				        "FiscalMIndex", MONTH ( EDATE ( [Date], - FiscalStartMonth + 1 ) ),
+				        "CalMonth", FORMAT ( [Date], "mmmm" ),
+				        "CalQtr", "Q"
+				            & CEILING ( MONTH ( [Date] ), FiscalStartMonth - 1 ) / ( FiscalStartMonth - 1 ),
+				        "CalYear", YEAR ( [Date] ),
+				        "Fiscal Week",
+				        VAR FiscalFirstDay =
+				            IF (
+				                MONTH ( [Date] ) < FiscalStartMonth,
+				                DATE ( YEAR ( [Date] ) - 1, FiscalStartMonth, 1 ),
+				                DATE ( YEAR ( [Date] ), FiscalStartMonth, 1 )
+				            )
+				        VAR FilteredTableCount =
+				            COUNTROWS (
+				                FILTER (
+				                    SELECTCOLUMNS ( GENERATESERIES ( FiscalFirstDay, [Date] ), "Dates", [Value] ),
+				                    FORMAT ( [Dates], "ddd" ) = WeekStartsOn
+				                )
+				            )
+				        VAR WeekNos =
+				            IF (
+				                FORMAT ( FiscalFirstDay, "ddd" ) <> WeekStartsOn,
+				                FilteredTableCount + 1,
+				                FilteredTableCount
+				            )
+				        RETURN
+				            "Week " & WeekNos,
+				        "Fiscal Qtr", "Q"
+				            & CEILING ( MONTH ( EDATE ( [Date], - FiscalStartMonth + 1 ) ), 3 ) / 3,
+				        "Fiscal Year",
+				        VAR CY =
+				            RIGHT ( YEAR ( [Date] ), 2 )
+				        VAR NY =
+				            RIGHT ( YEAR ( [Date] ) + 1, 2 )
+				        VAR PY =
+				            RIGHT ( YEAR ( [Date] ) - 1, 2 )
+				        VAR FinYear =
+				            IF ( MONTH ( [Date] ) > ( FiscalStartMonth - 1 ), CY & "-" & NY, PY & "-" & CY )
+				        RETURN
+				            FinYear,
+				        "CalWeekNo", WEEKNUM ( [Date], 2 ),
+				        "Weekend/Working", IF ( WEEKDAY ( [Date], 2 ) > 5, "Weekend", "Working" ),
+				        "Day", FORMAT ( [Date], "ddd" ),
+				        "CustomDate", FORMAT ( [Date], "d/mm" )  ,
+				        "Month-Year", FORMAT([Date],"MMM YYYY"),
+				        "MY Sort", YEAR([Date])*100+MONTH([Date]),
+				        "Week-Year", YEAR([Date])*100+WEEKNUM([Date])
+				)
+				```
+
+	annotation PBI_Id = cbfa88b6103944d3b580e7234d46dbca

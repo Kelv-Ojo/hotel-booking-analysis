@@ -1,0 +1,50 @@
+table Summary
+	lineageTag: 201c33d9-3175-4839-a3d5-bea53187741d
+
+	column 'Sr No'
+		dataType: int64
+		formatString: 0
+		lineageTag: bc9eb455-4a2d-446a-8c66-c2ec3e85ca33
+		summarizeBy: sum
+		sourceColumn: Sr No
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Column Name'
+		dataType: string
+		lineageTag: c78448e4-de02-45ef-bc18-a04b177042ea
+		summarizeBy: none
+		sourceColumn: Column Name
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Data Desc'
+		dataType: string
+		lineageTag: 8e6a0310-42a3-4738-aa39-6e4cd7d8205d
+		summarizeBy: none
+		sourceColumn: Data Desc
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Summary = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+				    Summary_Sheet = Source{[Item="Summary",Kind="Sheet"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Summary_Sheet,{{"Column1", Int64.Type}, {"Column2", type text}, {"Column3", type text}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Column1", "Sr No"}, {"Column2", "Column Name"}, {"Column3", "Data Desc"}})
+				in
+				    #"Renamed Columns"
+
+	changedProperty = IsHidden
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table

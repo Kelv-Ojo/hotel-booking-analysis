@@ -37,7 +37,7 @@ Images are static previews. Open them at full size for detail; follow the reprod
 
 [Download the Excel workbook](excel/Hotel%20Reporting.xlsx). Change the year and hotel selectors to explore monthly and channel counts. The workbook uses SUMIFS, count-weighted rates, data validation, a native chart and reconciliation formulas. All six year/hotel combinations were checked against independently calculated source aggregates.
 
-The workbook includes a native source table but **no embedded PivotTable or Power Query connection**. A companion [Power Query M script](excel/ImportMonthly.pq) and [setup instructions](docs/excel-and-powerbi.md) are supplied; they have not been executed in Excel.
+The workbook includes a native source table but **no embedded PivotTable or Power Query connection**. A companion [Power Query M script](excel/ImportMonthly.pq) and [setup instructions](docs/excel-and-powerbi.md) are supplied; the M script has now been refreshed in Power BI, but has not been executed in Excel.
 
 ## Relational SQL case study
 
@@ -90,11 +90,11 @@ On Windows activate with `.venv\Scripts\activate`. The included compressed CSV c
 
 [Original PBIX](powerbi/Hotel%20Bookings.pbix) · [Original PDF](powerbi/original-dashboard.pdf) · [Companion DAX measures](powerbi/measures.dax)
 
-The original dashboard is preserved as earlier work. Its YTD card shows **36,483**, which differs in scope from the full source, and its date axis includes dates before the first source arrival. The new SQL/Excel metrics use arrival dates consistently. **The PBIX has not been repaired, reopened or refreshed in Power BI Desktop**, and the companion DAX has not been executed. [Rebuild specification and validation totals](docs/excel-and-powerbi.md).
+The original dashboard is preserved unchanged. A separate [reviewed PBIX](powerbi/Hotel%20Bookings-reviewed-20261108.pbix) and editable PBIP source repair the arrival-date relationship, selected-period measures and explicit booking-status labels. Native Power BI refresh succeeded against the recovered original workbook; four missing children values are retained as null. Six hotel/year DAX scopes match independent workbook counts exactly. [Native evidence and remaining interaction checks](docs/NATIVE-REPORT-REVIEW-20261108.md). The roadmap card remains in progress until every slicer and chart interaction is checked.
 
 ![Earlier Power BI report with a different YTD scope](assets/screenshots/powerbi-original.png)
 
-Earlier Power BI artefact, preserved for comparison. Its 36,483 YTD card is not the full 119,390-row snapshot; the date axis precedes the verified arrival range and “Completed” is not a checked-out-stay definition. These known issues are not claimed repaired. Use the verified SQL/Excel outputs above for the full source.
+Earlier Power BI artefact, preserved for comparison. Its 36,483 YTD card is not the full 119,390-row snapshot; the date axis precedes the verified arrival range and “Completed” is not a checked-out-stay definition. Those issues remain in this preserved original only; use the separate reviewed version and its verification notes.
 
 ## Sources and limits
 
@@ -111,7 +111,7 @@ This is historical educational analysis, not current hotel performance or a clie
 
 ## Portfolio review notes
 
-This project is ready to review through its reconciled SQL/Python evidence and genuine Excel screenshot. Headline rates cover all 119,390 source bookings; the screenshot is one selection. Keep the no-show caveat and incomplete-year warning beside comparisons. The original Power BI report is earlier work with unresolved scope/date issues, not a repaired dashboard.
+This project is ready to review through its reconciled SQL/Python evidence and genuine Excel screenshot. Headline rates cover all 119,390 source bookings; the screenshot is one selection. Keep the no-show caveat and incomplete-year warning beside comparisons. The original Power BI report is retained for comparison. The separate reviewed report repairs its date/status scope and has native refresh evidence, with exhaustive interaction testing still pending.
 
 ## Business context and skills
 
@@ -121,7 +121,7 @@ Hotel teams need to understand which historical booking groups warrant further i
 
 ## Portfolio evidence and interview summary
 
-**Demonstrated:** relational SQL modelling, joins, denominator reconciliation and Excel reporting across 119,390 historical records. The verified Excel/SQL case is the principal evidence. The older Power BI artefact has separate date/status limitations and is not used to certify the Excel output. Explain why cancellation flags include no-shows, why filtered screenshots differ from full-snapshot totals, and why partial arrival years must not be treated as complete comparable years. A proposed confirmation trial needs matched periods and channel/lead-time checks before any causal claim.
+**Demonstrated:** relational SQL modelling, joins, denominator reconciliation and Excel reporting across 119,390 historical records. The verified Excel/SQL case is the principal evidence. The reviewed Power BI report has separate native verification evidence; it does not certify Excel refresh. Explain why cancellation flags include no-shows, why filtered screenshots differ from full-snapshot totals, and why partial arrival years must not be treated as complete comparable years. A proposed confirmation trial needs matched periods and channel/lead-time checks before any causal claim.
 
 ## Complete-year case study
 

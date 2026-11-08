@@ -5,3 +5,6 @@ reports/hotel.db
 reports/model/
 excel/source.json
 *.inspect.ndjson
+
+# Native Power BI local cache and machine settings
+**/.pbi/

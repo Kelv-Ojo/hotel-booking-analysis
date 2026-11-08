@@ -1,0 +1,16 @@
+relationship AutoDetected_01b34de2-7f9d-4162-af62-44109a807c47
+	fromColumn: hotel_bookings.country
+	toColumn: Country.country
+
+relationship AutoDetected_00757d1b-09eb-4579-a18d-80c805260865
+	fromColumn: hotel_bookings.market_segment
+	toColumn: market_segment.market_segment
+
+relationship 619e847c-f8ef-423e-a539-83c3a179c081
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Calendar.Date
+	toColumn: LocalDateTable_2fb7a6e0-eae8-4ba7-b9dd-3218bedd3d28.Date
+
+relationship 80efb408-18d5-4c81-b6f5-3e767f01ca80
+	fromColumn: hotel_bookings.ArrivalDate
+	toColumn: Calendar.Date

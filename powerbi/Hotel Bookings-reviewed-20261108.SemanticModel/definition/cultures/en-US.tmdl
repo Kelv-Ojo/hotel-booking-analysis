@@ -1,0 +1,366 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "country.country": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Country",
+			          "ConceptualProperty": "country"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Country": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "market_segment.market_segment": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "market_segment",
+			          "ConceptualProperty": "market_segment"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Market Segment": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "hotel_bookings.hotel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "hotel_bookings",
+			          "ConceptualProperty": "hotel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Hotel": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calculation.checked_out_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calculation",
+			          "ConceptualProperty": "Checked Out Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Checked Out Rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calculation.cancellation_flag_rate": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calculation",
+			          "ConceptualProperty": "Cancellation Flag Rate"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cancellation Flag Rate": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calculation.cancellation_flags": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calculation",
+			          "ConceptualProperty": "Cancellation Flags"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Cancellation Flags": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calculation.number_of_bookings": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calculation",
+			          "ConceptualProperty": "Number of Bookings"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Number of Bookings": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calculation.checked_out": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calculation",
+			          "ConceptualProperty": "Checked Out"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Checked Out": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "hotel_bookings.deposit_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "hotel_bookings",
+			          "ConceptualProperty": "deposit_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Deposit Type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "hotel_bookings.distribution_channel": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "hotel_bookings",
+			          "ConceptualProperty": "distribution_channel"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Channel": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "hotel_bookings.stays_in_weekend_nights": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "hotel_bookings",
+			          "ConceptualProperty": "stays_in_weekend_nights"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Weekend Night": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Number of Weekend Night": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "hotel_bookings.adults": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "hotel_bookings",
+			          "ConceptualProperty": "adults"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "No of Adult": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "No of Adults": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "hotel_bookings.customer_type": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "hotel_bookings",
+			          "ConceptualProperty": "customer_type"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Customer Type": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "hotel_bookings.is_canceled": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "hotel_bookings",
+			          "ConceptualProperty": "is_canceled"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "country.name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Country",
+			          "ConceptualProperty": "Name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Country": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "calendar.calyear": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Calendar",
+			          "ConceptualProperty": "CalYear"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Year": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json

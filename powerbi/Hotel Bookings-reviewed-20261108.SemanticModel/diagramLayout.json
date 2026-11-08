@@ -1,0 +1,113 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 123.33333333333326,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 413,
+            "y": 20.25
+          },
+          "nodeIndex": "hotel_bookings",
+          "nodeLineageTag": "7bf060b0-76c0-45dc-8099-ddc2c3792028",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1051,
+            "y": 537.25
+          },
+          "nodeIndex": "Summary",
+          "nodeLineageTag": "201c33d9-3175-4839-a3d5-bea53187741d",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 174,
+            "y": 400.75
+          },
+          "nodeIndex": "Country",
+          "nodeLineageTag": "5e680d71-8c04-4375-a7bd-443c99ea36a1",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 524.66666666666674,
+            "y": 471.41666666666669
+          },
+          "nodeIndex": "market_segment",
+          "nodeLineageTag": "24ad5bb6-8051-4f5c-a7f8-1ecd54a4431c",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 751.33333333333337,
+            "y": 111.75
+          },
+          "nodeIndex": "Calendar",
+          "nodeLineageTag": "4f0dad94-5b3c-440b-b9dc-26246566d8c8",
+          "size": {
+            "height": 200,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1161,
+            "y": 296
+          },
+          "nodeIndex": "Calculation",
+          "nodeLineageTag": "795e8b06-64f4-41e4-ae41-770b7e98b10d",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1271,
+            "y": 205.25
+          },
+          "nodeIndex": "MonthlyImport",
+          "nodeLineageTag": "d65a6d7f-439e-4e9d-840b-2ee7e7e94099",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 60,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

@@ -1,0 +1,74 @@
+table Calculation
+	lineageTag: 795e8b06-64f4-41e4-ae41-770b7e98b10d
+
+	measure 'Number of Bookings' = CALCULATE(COUNTROWS(hotel_bookings))
+		formatString: #,0
+		lineageTag: b80a1cb6-6a0b-46da-8ccc-fd6f6f4e90d3
+
+	measure 'Total YTD bookings' = TOTALYTD([Number of Bookings],'Calendar'[Date],"31/12")
+		formatString: #,0
+		lineageTag: 19d6f3b1-8518-49ee-bbdd-ee4acf066fb5
+
+	measure 'Total YTD bookings not cancelled' = TOTALYTD(CALCULATE([Number of Bookings],hotel_bookings[is_canceled]=0),'Calendar'[Date],"31/12")
+		formatString: #,0
+		lineageTag: 9366396f-1ebd-4e81-b769-70500bfcbc66
+
+	measure 'Total YTD bookings cancelled' = TOTALYTD(CALCULATE([Number of Bookings],hotel_bookings[is_canceled]=1),'Calendar'[Date],"31/12")
+		formatString: #,0
+		lineageTag: 31677705-dc22-4268-bc5d-600bc62d5a75
+
+	measure 'Cancelled% ytd' = DIVIDE([Total YTD bookings cancelled],[Total YTD bookings])
+		formatString: 0%;-0%;0%
+		lineageTag: 7bd68fe0-511f-4896-a019-eed83f1267d2
+
+	measure 'Not Cancelled% ytd' = DIVIDE([Total YTD bookings not cancelled],[Total YTD bookings])
+		formatString: 0%;-0%;0%
+		lineageTag: 871f0753-16b4-4d04-afb1-b2d35c5fc349
+
+	measure 'Total  bookings cancelled' = CALCULATE([Number of Bookings],hotel_bookings[is_canceled]=1)
+		formatString: #,0
+		lineageTag: 30e12254-96f1-4deb-9c5b-c20605f69994
+
+	measure 'Total  bookings not cancelled' = CALCULATE([Number of Bookings],hotel_bookings[is_canceled]=0)
+		formatString: #,0
+		lineageTag: 417f4be1-c1ac-4d4a-b886-d2eeb0457744
+
+	measure Cancelled% = DIVIDE([Total  bookings cancelled],[Number of Bookings])
+		formatString: 0%;-0%;0%
+		lineageTag: 86ca4617-bb83-4dcf-a923-3ac7c8bfcf6a
+
+	measure 'Not Cancelled%' = DIVIDE([Total  bookings not cancelled],[Number of Bookings])
+		formatString: 0%;-0%;0%
+		lineageTag: 392e3604-1a05-4592-a10d-fa1e35297812
+
+	measure 'Cancellation Flags' = CALCULATE(COUNTROWS(hotel_bookings), KEEPFILTERS(hotel_bookings[is_canceled] = 1))
+		formatString: #,0
+		lineageTag: f6acd4c2-0ba3-4a73-8158-5dec06af5b64
+
+	measure 'Checked Out' = CALCULATE(COUNTROWS(hotel_bookings), KEEPFILTERS(hotel_bookings[reservation_status] = "Check-Out"))
+		formatString: #,0
+		lineageTag: 7b451b92-2ce7-4b33-8aca-18a1273c3f7d
+
+	measure 'No Shows' = CALCULATE(COUNTROWS(hotel_bookings), KEEPFILTERS(hotel_bookings[reservation_status] = "No-Show"))
+		formatString: #,0
+		lineageTag: 6677d634-6d43-4017-9cb5-dbd6ee4254cd
+
+	measure 'Cancellation Flag Rate' = DIVIDE([Cancellation Flags], [Number of Bookings])
+		formatString: 0.0%
+		lineageTag: af376dbe-2ba5-47de-aed1-a9aaa0a65002
+
+	measure 'Checked Out Rate' = DIVIDE([Checked Out], [Number of Bookings])
+		formatString: 0.0%
+		lineageTag: 2ffc8fb7-769a-49a5-91f2-ae7afecf9192
+
+	partition Calculation = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table

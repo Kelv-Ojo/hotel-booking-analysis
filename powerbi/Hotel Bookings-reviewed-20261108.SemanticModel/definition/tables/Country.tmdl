@@ -1,0 +1,37 @@
+table Country
+	lineageTag: 5e680d71-8c04-4375-a7bd-443c99ea36a1
+
+	column country
+		dataType: string
+		lineageTag: 8edc0813-3152-4c91-923d-8d68d31843f6
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 4ecebf4b-8830-42a3-a9d0-218ea3fbee14
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Country = m
+		mode: import
+		source =
+				let
+				    Source = hotel_bookings,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"country"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Merged Queries" = Table.NestedJoin(#"Removed Duplicates", {"country"}, Table, {"ISO (3)"}, "Table", JoinKind.LeftOuter),
+				    #"Expanded Table" = Table.ExpandTableColumn(#"Merged Queries", "Table", {"Country"}, {"Country.1"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Table",{{"Country.1", "Name"}}),
+				    #"Explicit Country Labels" = Table.AddColumn(#"Renamed Columns", "DisplayName", each if [Name] <> null then [Name] else if [country] = null or [country] = "NULL" or [country] = "NA" then "Not recorded" else [country] & " (code)", type text),
+				    #"Final Columns" = Table.RenameColumns(Table.RemoveColumns(#"Explicit Country Labels",{"Name"}),{{"DisplayName","Name"}})
+				in
+				    #"Final Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table

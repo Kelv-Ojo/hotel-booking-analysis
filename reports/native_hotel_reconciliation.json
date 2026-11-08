@@ -1,0 +1,71 @@
+{
+  "source_workbook_sha256": "8cba074e328df64b50d480ebef415bfa89dd93a55b2020f41fc7d336b84dcb28",
+  "shared_rows_compared": 119390,
+  "shared_fields_compared": 11,
+  "native_dax_comparison": "All six hotel/arrival-year scopes match independent workbook counts exactly.",
+  "columns": [
+    "year",
+    "hotel",
+    "bookings",
+    "cancellation_flags",
+    "checked_out",
+    "no_shows"
+  ],
+  "observed_native_rows": [
+    [
+      2015,
+      "Resort Hotel",
+      8314,
+      2138,
+      6176,
+      69
+    ],
+    [
+      2015,
+      "City Hotel",
+      13682,
+      6004,
+      7678,
+      122
+    ],
+    [
+      2016,
+      "Resort Hotel",
+      18567,
+      4930,
+      13637,
+      113
+    ],
+    [
+      2016,
+      "City Hotel",
+      38140,
+      15407,
+      22733,
+      555
+    ],
+    [
+      2017,
+      "Resort Hotel",
+      13179,
+      4054,
+      9125,
+      109
+    ],
+    [
+      2017,
+      "City Hotel",
+      27508,
+      11691,
+      15817,
+      239
+    ]
+  ],
+  "full_totals": [
+    119390,
+    44224,
+    75166,
+    1207
+  ],
+  "scope": "Native cached-model DAX and workbook comparison. Does not certify source refresh or every visual interaction."
+}

@@ -1,0 +1,58 @@
+table MonthlyImport
+	lineageTag: d65a6d7f-439e-4e9d-840b-2ee7e7e94099
+
+	column year
+		dataType: int64
+		lineageTag: 84106559-faf5-47e9-88f8-c89bbfcbc1fe
+		sourceColumn: year
+
+	column year_month
+		dataType: string
+		lineageTag: 5e702a99-20e5-47fb-adca-bf6ac3972e8f
+		sourceColumn: year_month
+
+	column hotel
+		dataType: string
+		lineageTag: d49c5dad-7a6e-4854-bdca-fe9c83c33c3b
+		sourceColumn: hotel
+
+	column distribution_channel
+		dataType: string
+		lineageTag: 160a18cf-b47e-4b42-b4fd-8b490a0c0c06
+		sourceColumn: distribution_channel
+
+	column bookings
+		dataType: int64
+		lineageTag: 875e8580-b4f4-4449-9dc5-a9d35556d50d
+		sourceColumn: bookings
+
+	column canceled
+		dataType: int64
+		lineageTag: 1d1f8267-24e7-4df2-af28-6b0e78ff22d5
+		sourceColumn: canceled
+
+	column checked_out
+		dataType: int64
+		lineageTag: 1e0dec98-e5cb-4d2f-ae72-1f09aae240f6
+		sourceColumn: checked_out
+
+	column no_shows
+		dataType: int64
+		lineageTag: 0ae3dffe-bb6b-4c2a-9b82-8e79f0ba6591
+		sourceColumn: no_shows
+
+	partition MonthlyImport = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents(CsvPath), [Delimiter=",", Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+				    Headers = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    Typed = Table.TransformColumnTypes(Headers, {
+				        {"year", Int64.Type}, {"year_month", type text}, {"hotel", type text},
+				        {"distribution_channel", type text}, {"bookings", Int64.Type},
+				        {"canceled", Int64.Type}, {"checked_out", Int64.Type}, {"no_shows", Int64.Type}
+				    }),
+				    Check = Table.SelectRows(Typed, each [bookings] < 0 or [canceled] < 0 or [canceled] > [bookings]),
+				    Result = if Table.RowCount(Check) > 0 then error "Invalid booking or cancellation counts" else Typed
+				in
+				    Result

@@ -1,0 +1,302 @@
+table hotel_bookings
+	lineageTag: 7bf060b0-76c0-45dc-8099-ddc2c3792028
+
+	column hotel
+		dataType: string
+		lineageTag: f7656e13-b72b-4e76-abea-6e3dbc9f0af6
+		summarizeBy: none
+		sourceColumn: hotel
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_canceled
+		dataType: int64
+		formatString: 0
+		lineageTag: 274938f3-c9c7-4775-902f-5ca72f505853
+		summarizeBy: sum
+		sourceColumn: is_canceled
+
+		annotation SummarizationSetBy = Automatic
+
+	column lead_time
+		dataType: int64
+		formatString: 0
+		lineageTag: 2ddf7ca2-f17e-4935-925d-231b1515ecf7
+		summarizeBy: sum
+		sourceColumn: lead_time
+
+		annotation SummarizationSetBy = Automatic
+
+	column arrival_date_year
+		dataType: int64
+		formatString: 0
+		lineageTag: 19809350-4e30-4f17-983d-7f856b13719f
+		summarizeBy: sum
+		sourceColumn: arrival_date_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column arrival_date_month
+		dataType: string
+		lineageTag: baf81335-2c78-4cd3-8f70-cdc90fb34dac
+		summarizeBy: none
+		sourceColumn: arrival_date_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column arrival_date_week_number
+		dataType: int64
+		formatString: 0
+		lineageTag: ac92d682-9df5-4922-aff4-1c20d3545453
+		summarizeBy: sum
+		sourceColumn: arrival_date_week_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column arrival_date_day_of_month
+		dataType: int64
+		formatString: 0
+		lineageTag: 43c638df-130e-4cb7-bce5-0464af5ceb6d
+		summarizeBy: sum
+		sourceColumn: arrival_date_day_of_month
+
+		annotation SummarizationSetBy = Automatic
+
+	column stays_in_weekend_nights
+		dataType: int64
+		formatString: 0
+		lineageTag: 48e223a8-23e8-497f-855b-a83a16546fcc
+		summarizeBy: sum
+		sourceColumn: stays_in_weekend_nights
+
+		annotation SummarizationSetBy = Automatic
+
+	column stays_in_week_nights
+		dataType: int64
+		formatString: 0
+		lineageTag: 6692ba51-97fc-474e-b103-89936db5f165
+		summarizeBy: sum
+		sourceColumn: stays_in_week_nights
+
+		annotation SummarizationSetBy = Automatic
+
+	column adults
+		dataType: int64
+		formatString: 0
+		lineageTag: 1edca30b-e3ca-4c58-bade-a907b74b243a
+		summarizeBy: sum
+		sourceColumn: adults
+
+		annotation SummarizationSetBy = Automatic
+
+	column children
+		dataType: int64
+		formatString: 0
+		lineageTag: 0e89ae30-6143-44a3-a814-e27fba1c6994
+		summarizeBy: sum
+		sourceColumn: children
+
+		annotation SummarizationSetBy = Automatic
+
+	column babies
+		dataType: int64
+		formatString: 0
+		lineageTag: 29eb486a-9352-4a63-b5e7-5184c4507200
+		summarizeBy: sum
+		sourceColumn: babies
+
+		annotation SummarizationSetBy = Automatic
+
+	column meal
+		dataType: string
+		lineageTag: c060071f-0080-43c6-ba09-61ae992c85b7
+		summarizeBy: none
+		sourceColumn: meal
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: f249588b-5964-46dd-86e8-e5efa3d38fca
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column market_segment
+		dataType: string
+		lineageTag: 5b1e18aa-c793-4a6c-8afa-0338fc64ba84
+		summarizeBy: none
+		sourceColumn: market_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column distribution_channel
+		dataType: string
+		lineageTag: d0f7f891-3245-4580-8cef-04e2ca100f81
+		summarizeBy: none
+		sourceColumn: distribution_channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_repeated_guest
+		dataType: int64
+		formatString: 0
+		lineageTag: 9045371a-6b5c-4f69-a7d6-f19e30d6d1d4
+		summarizeBy: sum
+		sourceColumn: is_repeated_guest
+
+		annotation SummarizationSetBy = Automatic
+
+	column previous_cancellations
+		dataType: int64
+		formatString: 0
+		lineageTag: 34838e94-0a6d-4dcb-a8a7-e2ff17a15404
+		summarizeBy: sum
+		sourceColumn: previous_cancellations
+
+		annotation SummarizationSetBy = Automatic
+
+	column previous_bookings_not_canceled
+		dataType: int64
+		formatString: 0
+		lineageTag: 10d220dd-61ef-4dd3-b0c6-5ff092247a22
+		summarizeBy: sum
+		sourceColumn: previous_bookings_not_canceled
+
+		annotation SummarizationSetBy = Automatic
+
+	column reserved_room_type
+		dataType: string
+		lineageTag: cd7acd44-83d5-4a4c-bdcf-3c3af285f2a3
+		summarizeBy: none
+		sourceColumn: reserved_room_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column assigned_room_type
+		dataType: string
+		lineageTag: df81871f-f091-465c-b29c-0c1d84e53c1d
+		summarizeBy: none
+		sourceColumn: assigned_room_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column booking_changes
+		dataType: int64
+		formatString: 0
+		lineageTag: 344ed88b-29ca-47c9-a50e-19cbbfdc03f5
+		summarizeBy: sum
+		sourceColumn: booking_changes
+
+		annotation SummarizationSetBy = Automatic
+
+	column deposit_type
+		dataType: string
+		lineageTag: de2c753c-8acd-4e39-99b8-0486cd738f19
+		summarizeBy: none
+		sourceColumn: deposit_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column agent
+		dataType: string
+		lineageTag: 626a63cf-f05c-46a7-96d2-0ce59b65c35c
+		summarizeBy: none
+		sourceColumn: agent
+
+		annotation SummarizationSetBy = Automatic
+
+	column company
+		dataType: string
+		lineageTag: 5368fb82-1f91-4199-81af-4598dfb642e5
+		summarizeBy: none
+		sourceColumn: company
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_in_waiting_list
+		dataType: int64
+		formatString: 0
+		lineageTag: 8dafd85f-b550-41c7-9570-80b92233cea4
+		summarizeBy: sum
+		sourceColumn: days_in_waiting_list
+
+		annotation SummarizationSetBy = Automatic
+
+	column customer_type
+		dataType: string
+		lineageTag: 4d7a4e80-bdae-42f1-b459-313968e55f94
+		summarizeBy: none
+		sourceColumn: customer_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column adr
+		dataType: double
+		lineageTag: 825286a5-223b-4302-934f-bd3693f4a6fc
+		summarizeBy: sum
+		sourceColumn: adr
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column required_car_parking_spaces
+		dataType: int64
+		formatString: 0
+		lineageTag: 26c375a4-4f4a-4452-ad67-0734d4a6fb24
+		summarizeBy: sum
+		sourceColumn: required_car_parking_spaces
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_of_special_requests
+		dataType: int64
+		formatString: 0
+		lineageTag: cf878c4a-c136-46fe-8816-fd8a20035b59
+		summarizeBy: sum
+		sourceColumn: total_of_special_requests
+
+		annotation SummarizationSetBy = Automatic
+
+	column reservation_status
+		dataType: string
+		lineageTag: 974f5cb4-c2e8-46c6-a666-1ed960bdbefa
+		summarizeBy: none
+		sourceColumn: reservation_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column reservation_status_date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: e5bb6547-6bc2-4002-846e-528b1bf54d0f
+		summarizeBy: none
+		sourceColumn: reservation_status_date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ArrivalDate = DATE(hotel_bookings[arrival_date_year], SWITCH(hotel_bookings[arrival_date_month], "January", 1, "February", 2, "March", 3, "April", 4, "May", 5, "June", 6, "July", 7, "August", 8, "September", 9, "October", 10, "November", 11, "December", 12), hotel_bookings[arrival_date_day_of_month])
+		dataType: dateTime
+		formatString: yyyy-MM-dd
+		lineageTag: 295c037b-c1da-4f6c-b605-d44647b8310d
+		summarizeBy: none
+
+	partition hotel_bookings = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents(SourceWorkbookPath), null, true),
+				    hotel_bookings_Sheet = Source{[Item="hotel_bookings",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(hotel_bookings_Sheet, [PromoteAllScalars=true]),
+				    #"Missing Children" = Table.ReplaceValue(#"Promoted Headers", "NA", null, Replacer.ReplaceValue, {"children"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Missing Children",{{"hotel", type text}, {"is_canceled", Int64.Type}, {"lead_time", Int64.Type}, {"arrival_date_year", Int64.Type}, {"arrival_date_month", type text}, {"arrival_date_week_number", Int64.Type}, {"arrival_date_day_of_month", Int64.Type}, {"stays_in_weekend_nights", Int64.Type}, {"stays_in_week_nights", Int64.Type}, {"adults", Int64.Type}, {"children", Int64.Type}, {"babies", Int64.Type}, {"meal", type text}, {"country", type text}, {"market_segment", type text}, {"distribution_channel", type text}, {"is_repeated_guest", Int64.Type}, {"previous_cancellations", Int64.Type}, {"previous_bookings_not_canceled", Int64.Type}, {"reserved_room_type", type text}, {"assigned_room_type", type text}, {"booking_changes", Int64.Type}, {"deposit_type", type text}, {"agent", type any}, {"company", type any}, {"days_in_waiting_list", Int64.Type}, {"customer_type", type text}, {"adr", type number}, {"required_car_parking_spaces", Int64.Type}, {"total_of_special_requests", Int64.Type}, {"reservation_status", type text}, {"reservation_status_date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table

@@ -6,6 +6,10 @@ Both hotels peak in October: City Hotel has 4,219 bookings, including 1,947 canc
 
 Before proposing staffing changes, compare realised arrivals and room-night demand with staffing, capacity and calendar-event data. A booking peak alone does not establish labour demand. No staffing saving is claimed.
 
+![Monthly checked-out records and cancellation flags for both hotels in 2016](../assets/screenshots/peak-month-2016.png)
+
+The [recording runbook](RECORDING-RUNBOOK.md) contains a complete narration, screen sequence and final-take checks. Kelvin's remaining personal step is to rehearse, record and approve the video. The chart can be regenerated with `python src/plot_peak_month.py` using matplotlib; it reads the verified monthly output.
+
 ## Three-minute walkthrough script
 
 0:00–0:30: Introduce the question and explain why 2016 is the only complete arrival year in this snapshot.

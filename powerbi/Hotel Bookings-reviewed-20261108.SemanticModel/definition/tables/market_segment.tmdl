@@ -1,0 +1,24 @@
+table market_segment
+	lineageTag: 24ad5bb6-8051-4f5c-a7f8-1ecd54a4431c
+
+	column market_segment
+		dataType: string
+		lineageTag: 0f564ded-ee6e-4dd2-96e4-a533b6bd79f8
+		summarizeBy: none
+		sourceColumn: market_segment
+
+		annotation SummarizationSetBy = Automatic
+
+	partition market_segment = m
+		mode: import
+		source =
+				let
+				    Source = hotel_bookings,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"market_segment"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
