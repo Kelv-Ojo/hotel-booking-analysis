@@ -1,0 +1,385 @@
+{
+  "pbix_sha256": "564b25bd09cdaadaefc8e163bc3f6f5474c048f43edb5d2a39a28ebe5c244332",
+  "scope": "Static layout only; native calculations and interactions not certified",
+  "visuals": [
+    {
+      "page": "Page 1",
+      "name": "0ba64a8f00c168b58289",
+      "type": "shape",
+      "projections": {}
+    },
+    {
+      "page": "Page 1",
+      "name": "01ad6be9a9b890bcc0a9",
+      "type": "image",
+      "projections": {}
+    },
+    {
+      "page": "Page 1",
+      "name": "a2a9ea2866803abcd405",
+      "type": "slicer",
+      "projections": {
+        "Values": [
+          {
+            "queryRef": "Calendar.Date",
+            "active": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "cf84143961c9b06140a5",
+      "type": "slicer",
+      "projections": {
+        "Values": [
+          {
+            "queryRef": "Calendar.Month-Year",
+            "active": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "6bfe14508c621ea98c43",
+      "type": "slicer",
+      "projections": {
+        "Values": [
+          {
+            "queryRef": "Country.country",
+            "active": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "64496a95e500dd3a7916",
+      "type": "slicer",
+      "projections": {
+        "Values": [
+          {
+            "queryRef": "market_segment.market_segment",
+            "active": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "81c54ed72aa3e0025740",
+      "type": "slicer",
+      "projections": {
+        "Values": [
+          {
+            "queryRef": "hotel_bookings.hotel",
+            "active": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "20c43da5eb9a93e6d258",
+      "type": "card",
+      "projections": {
+        "Values": [
+          {
+            "queryRef": "Calculation.Total YTD bookings cancelled"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "86f28cc77edb0eba8a2c",
+      "type": "card",
+      "projections": {
+        "Values": [
+          {
+            "queryRef": "Calculation.Total YTD bookings"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "860ee4ecb4586333ce74",
+      "type": "card",
+      "projections": {
+        "Values": [
+          {
+            "queryRef": "Calculation.Total YTD bookings not cancelled"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "dec79eeee95b54266c69",
+      "type": "lineStackedColumnComboChart",
+      "projections": {
+        "Category": [
+          {
+            "queryRef": "Calendar.Month-Year",
+            "active": true
+          }
+        ],
+        "Y2": [
+          {
+            "queryRef": "Calculation.Total  bookings cancelled"
+          }
+        ],
+        "Y": [
+          {
+            "queryRef": "Calculation.Total  bookings not cancelled"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "d943c1266c5d477d6105",
+      "type": "slicer",
+      "projections": {
+        "Values": [
+          {
+            "queryRef": "Calendar.CalYear",
+            "active": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "fcda57f7e1097d4a2004",
+      "type": "columnChart",
+      "projections": {
+        "Category": [
+          {
+            "queryRef": "hotel_bookings.hotel",
+            "active": true
+          }
+        ],
+        "Y": [
+          {
+            "queryRef": "Calculation.Total YTD bookings"
+          }
+        ],
+        "Series": [
+          {
+            "queryRef": "hotel_bookings.is_canceled"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "fa7e8ef8380c3c1017aa",
+      "type": "barChart",
+      "projections": {
+        "Category": [
+          {
+            "queryRef": "Country.Name",
+            "active": true
+          }
+        ],
+        "Y": [
+          {
+            "queryRef": "Calculation.Total YTD bookings"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "4c447bfca1b04a06c4c9",
+      "type": "donutChart",
+      "projections": {
+        "Category": [
+          {
+            "queryRef": "market_segment.market_segment",
+            "active": true
+          }
+        ],
+        "Y": [
+          {
+            "queryRef": "Calculation.Total YTD bookings"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "678cbfb624115e1c0b09",
+      "type": "clusteredColumnChart",
+      "projections": {
+        "Y": [
+          {
+            "queryRef": "Calculation.Total YTD bookings"
+          }
+        ],
+        "Category": [
+          {
+            "queryRef": "hotel_bookings.distribution_channel",
+            "active": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "e02d854510540d911c16",
+      "type": "cardVisual",
+      "projections": {
+        "Data": [
+          {
+            "queryRef": "Calculation.Not Cancelled%"
+          },
+          {
+            "queryRef": "Calculation.Cancelled%"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "c45fd29f2ddbb8c68221",
+      "type": "shape",
+      "projections": {}
+    },
+    {
+      "page": "Page 1",
+      "name": "d4bd3f089006abcd6322",
+      "type": "columnChart",
+      "projections": {
+        "Category": [
+          {
+            "queryRef": "hotel_bookings.adults",
+            "active": true
+          }
+        ],
+        "Y": [
+          {
+            "queryRef": "Calculation.Not Cancelled%"
+          },
+          {
+            "queryRef": "Calculation.Cancelled%"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "7aab3d02e6cb10726bd8",
+      "type": "barChart",
+      "projections": {
+        "Category": [
+          {
+            "queryRef": "hotel_bookings.customer_type",
+            "active": true
+          }
+        ],
+        "Y": [
+          {
+            "queryRef": "Calculation.Not Cancelled%"
+          },
+          {
+            "queryRef": "Calculation.Cancelled%"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "5c89f3e97da975936839",
+      "type": "clusteredColumnChart",
+      "projections": {
+        "Category": [
+          {
+            "queryRef": "hotel_bookings.deposit_type",
+            "active": true
+          }
+        ],
+        "Y": [
+          {
+            "queryRef": "Calculation.Total  bookings not cancelled"
+          },
+          {
+            "queryRef": "Calculation.Total  bookings cancelled"
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "69ffd640c660cbb30c48",
+      "type": "pivotTable",
+      "projections": {
+        "Columns": [
+          {
+            "queryRef": "hotel_bookings.stays_in_weekend_nights",
+            "active": true
+          }
+        ],
+        "Values": [
+          {
+            "queryRef": "Calculation.Total YTD bookings cancelled"
+          }
+        ],
+        "Rows": [
+          {
+            "queryRef": "hotel_bookings.adults",
+            "active": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "7341649a0c04c43e7336",
+      "type": "pivotTable",
+      "projections": {
+        "Columns": [
+          {
+            "queryRef": "hotel_bookings.stays_in_weekend_nights",
+            "active": true
+          }
+        ],
+        "Values": [
+          {
+            "queryRef": "Calculation.Total YTD bookings not cancelled"
+          }
+        ],
+        "Rows": [
+          {
+            "queryRef": "hotel_bookings.adults",
+            "active": true
+          }
+        ]
+      }
+    },
+    {
+      "page": "Page 1",
+      "name": "054aca27cb5ad82599cb",
+      "type": "columnChart",
+      "projections": {
+        "Category": [
+          {
+            "queryRef": "hotel_bookings.hotel",
+            "active": true
+          }
+        ],
+        "Y": [
+          {
+            "queryRef": "Calculation.Not Cancelled%"
+          },
+          {
+            "queryRef": "Calculation.Cancelled%"
+          }
+        ]
+      }
+    }
+  ]
+}

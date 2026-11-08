@@ -122,3 +122,7 @@ Hotel teams need to understand which historical booking groups warrant further i
 ## Portfolio evidence and interview summary
 
 **Demonstrated:** relational SQL modelling, joins, denominator reconciliation and Excel reporting across 119,390 historical records. The verified Excel/SQL case is the principal evidence. The older Power BI artefact has separate date/status limitations and is not used to certify the Excel output. Explain why cancellation flags include no-shows, why filtered screenshots differ from full-snapshot totals, and why partial arrival years must not be treated as complete comparable years. A proposed confirmation trial needs matched periods and channel/lead-time checks before any causal claim.
+
+## Complete-year case study
+
+[Which 2016 arrival month had the most bookings?](docs/PEAK-MONTH-CASE-STUDY.md) includes a reproducible query, interpretation and three-minute walkthrough script. The personal recording remains outstanding. A [24-visual static inventory](docs/HOTEL-VISUAL-INVENTORY.json) records the original PBIX configuration; this is not native measure certification.

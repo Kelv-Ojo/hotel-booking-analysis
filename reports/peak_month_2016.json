@@ -1,0 +1,18 @@
+[
+  {
+    "hotel": "City Hotel",
+    "peak_arrival_month": "2016-10",
+    "bookings": 4219,
+    "cancellation_flags": 1947,
+    "checked_out": 2272,
+    "annual_bookings": 38140
+  },
+  {
+    "hotel": "Resort Hotel",
+    "peak_arrival_month": "2016-10",
+    "bookings": 1984,
+    "cancellation_flags": 567,
+    "checked_out": 1417,
+    "annual_bookings": 18567
+  }
+]
