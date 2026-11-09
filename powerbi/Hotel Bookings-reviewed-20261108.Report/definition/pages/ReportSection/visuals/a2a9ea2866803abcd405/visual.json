@@ -27,8 +27,9 @@
                 }
               },
               "queryRef": "Calendar.Date",
-              "nativeQueryRef": "Date",
-              "active": true
+              "nativeQueryRef": "Arrival date",
+              "active": true,
+              "displayName": "Arrival date"
             }
           ]
         }

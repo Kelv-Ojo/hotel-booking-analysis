@@ -90,7 +90,7 @@ On Windows activate with `.venv\Scripts\activate`. The included compressed CSV c
 
 [Original PBIX](powerbi/Hotel%20Bookings.pbix) · [Original PDF](powerbi/original-dashboard.pdf) · [Companion DAX measures](powerbi/measures.dax)
 
-The original dashboard is preserved unchanged. A separate [reviewed PBIX](powerbi/Hotel%20Bookings-reviewed-20261108.pbix) and editable PBIP source repair the arrival-date relationship, selected-period measures and explicit booking-status labels. Native Power BI refresh succeeded against the recovered original workbook; four missing children values are retained as null. Six hotel/year DAX scopes match independent workbook counts exactly. [Native evidence and remaining interaction checks](docs/NATIVE-REPORT-REVIEW-20261108.md). The roadmap card remains in progress until every slicer and chart interaction is checked.
+The original dashboard is preserved unchanged. A separate [reviewed PBIX](powerbi/Hotel%20Bookings-reviewed-20261108.pbix) and editable PBIP source repair the arrival-date relationship, selected-period measures and explicit booking-status labels. Native Power BI refresh succeeded against the recovered original workbook; four missing children values are retained as null. Six hotel/year DAX scopes match independent workbook counts exactly. [Native evidence and remaining interaction checks](docs/NATIVE-REPORT-REVIEW-20261108.md). The documented native visual acceptance now covers date-range, Month-Year, country and segment slicers, lower charts and matrix cells; the final report includes visible caveats.
 
 ![Earlier Power BI report with a different YTD scope](assets/screenshots/powerbi-original.png)
 
@@ -111,7 +111,7 @@ This is historical educational analysis, not current hotel performance or a clie
 
 ## Portfolio review notes
 
-This project is ready to review through its reconciled SQL/Python evidence and genuine Excel screenshot. Headline rates cover all 119,390 source bookings; the screenshot is one selection. Keep the no-show caveat and incomplete-year warning beside comparisons. The original Power BI report is retained for comparison. The separate reviewed report repairs its date/status scope and has native refresh evidence, with exhaustive interaction testing still pending.
+This project is ready to review through its reconciled SQL/Python evidence and genuine Excel screenshot. Headline rates cover all 119,390 source bookings; the screenshot is one selection. Keep the no-show caveat and incomplete-year warning beside comparisons. The original Power BI report is retained for comparison. The separate reviewed report repairs its date/status scope and has native refresh evidence, with documented native interaction acceptance.
 
 ## Business context and skills
 

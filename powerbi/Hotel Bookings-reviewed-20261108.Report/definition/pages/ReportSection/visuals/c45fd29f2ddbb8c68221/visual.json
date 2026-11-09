@@ -106,14 +106,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "15D"
+                  "Value": "13D"
                 }
               }
             },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Comparative Analysis'"
+                  "Value": "'Comparative analysis | Rates use selected booking counts; small groups need caution.'"
                 }
               }
             },

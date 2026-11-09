@@ -599,24 +599,24 @@
       "title": [
         {
           "properties": {
-            "titleWrap": {
+            "show": {
               "expr": {
                 "Literal": {
                   "Value": "true"
                 }
               }
             },
-            "fontSize": {
+            "text": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
+                  "Value": "'Cancellation flags by adults and weekend nights'"
                 }
               }
             },
-            "fontFamily": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
+                  "Value": "10D"
                 }
               }
             }

@@ -1,0 +1,63 @@
+{
+  "review_date": "2026-11-08",
+  "method": "Native UI observations compared with independent recovered-workbook aggregation; no rerun of previously completed whole-source reconciliation.",
+  "checks": {
+    "date_range_July2015": {
+      "bookings": 2776,
+      "checked_out": 1517,
+      "flags": 1259
+    },
+    "MonthYear_July2015": {
+      "bookings": 2776,
+      "checked_out": 1517,
+      "flags": 1259
+    },
+    "PRT2016": {
+      "bookings": 22321,
+      "flags": 12405
+    },
+    "Direct_PRT2016": {
+      "bookings": 2652,
+      "flags": 513
+    },
+    "Direct2016": {
+      "bookings": 5663,
+      "flags": 867
+    },
+    "July_NoDeposit_chart_selection": {
+      "checked_out": 1517,
+      "flags": 1029
+    },
+    "july_matrix_cells": {
+      "checked_out_cells": 19,
+      "flag_cells": 16,
+      "all_nonempty_cells_match": true
+    }
+  },
+  "limits": "Representative acceptance cases cover every slicer type and all data-visual families, not every possible combination or every software version.",
+  "completed_review_date": "2026-11-09",
+  "interaction_mode": "11 selectable visuals have 154 explicit DataFilter links to other data visuals. These replace ambiguous cross-highlighting; self-selection keeps native highlighting.",
+  "final_native_checks": {
+    "Direct_chart_selection_2016": {
+      "bookings": 5663,
+      "checked_out": 4796,
+      "flags": 867
+    },
+    "NoDeposit_chart_selection_2016": {
+      "checked_out": 36173,
+      "flags": 13609
+    },
+    "caveats": "Arrival-date basis, partial years, no-shows, descriptive limits and small-group caution visibly rendered. Both adult/weekend-night matrices titled."
+  },
+  "export_reopen": {
+    "date": "2026-11-09",
+    "passed": true,
+    "reviewed_pbix_sha256": "e472b23be365317c9856bb6a64d1cb04e2513a6b6067809343411b26cfa6027a",
+    "Direct_full_snapshot": [
+      12606,
+      10672,
+      1934
+    ],
+    "clear_restores_full_snapshot": true
+  }
+}

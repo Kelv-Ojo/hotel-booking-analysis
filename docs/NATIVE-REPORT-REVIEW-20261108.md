@@ -28,8 +28,33 @@ Year slicer 2016 gave 56,707 / 36,370 / 20,337 bookings/checkouts/cancellation f
 
 For a matching full source workbook, set the SourceWorkbookPath text parameter in Power Query. The review machine uses the generic path `C:\PortfolioData\hotel-booking-analysis\Hotel Bookings-source.xlsx`. Set CsvPath to this repository's `reports/excel_source.csv` for MonthlyImport. Full workbook has the hotel_bookings and Summary sheets. Use `python src/reconcile_original_workbook.py PATH_TO_WORKBOOK` with openpyxl installed to confirm the source. Do not substitute another snapshot silently.
 
-## Still required before Done
+## Final visual acceptance, completed 9 November 2026
 
-The model, refresh and representative year/hotel interactions are verified, not every possible visual interaction. Finish a recorded acceptance matrix for date-range boundaries, Month-Year, country and market-segment slicers; chart cross-filter/highlight behaviour; every monthly plotted point and every country/segment subtotal including missing codes. Label the date slicer explicitly as arrival date and add partial-year/no-show notes directly in the report. The exported PBIX was reopened successfully: the saved 2016 selection retained 56,707 bookings and 36,370 checkouts with no missing-data warning. Until then the board card remains In Progress.
+The requested interaction acceptance is complete for the documented cases. See [native observation record](../reports/native_visual_acceptance.json). This covers every slicer type and every data-visual family; it is not a claim to test every possible value combination or future Power BI release.
 
-Desktop Excel is unavailable. The formula workbook is preserved, but embedded native Power Query connections, PivotTables and Excel refresh remain unverified and unfinished.
+| Native action | Verified result |
+|---|---|
+| Arrival date 1–31 July 2015 | 2,776 bookings, 1,517 checkouts, 1,259 cancellation flags |
+| Month-Year Jul 2015, full date range | Same totals, confirming the common arrival-date basis |
+| Country PRT and year 2016 | 22,321 bookings, 12,405 flags; channel and monthly charts respond |
+| Add market segment Direct | 2,652 bookings, 513 flags; country, channel and monthly charts respond |
+| Clear country, retain Direct and 2016 | 5,663 bookings, 867 flags, 84.7% checkout rate |
+| July lower matrices | Every nonempty adult/weekend-night cell matches independent workbook counts; totals 1,517 / 1,259 |
+| July rate and deposit charts | Adult/customer cancellation percentages and 1,517 / 1,029 No Deposit statuses match source; selecting and clearing the deposit bar updates/restores other visuals |
+| Revised chart-driven filtering | Direct segment chart gives 5,663 / 4,796 / 867; selecting No Deposit gives 36,173 checkouts / 13,609 flags in 2016 |
+
+Original native cross-highlighting left background totals visible beside recalculated rate labels. The final page explicitly uses DataFilter for 154 links from eleven selectable visuals to the other data visuals. This makes each selected category's denominator clear. Static checks verify every source/target exists, links are unique and all intended pairs use DataFilter; native representative chart selections confirm the behaviour. Selecting another chart replaces the previous chart selection; use slicers for retained combinations. Self-selection retains the native highlight indication.
+
+The report now labels Arrival date, both adult/weekend-night matrices, partial arrival years, inclusion of no-shows, historical associations and small-group caution. Caveats render in dark text with readable contrast. Default year/hotel/month selections are cleared. The original 24 visual containers are preserved, with one added caveat label; original visual fields and measures remain intact.
+
+Screenshots: [date range](../assets/screenshots/hotel-test-date-july2015.png), [Month-Year](../assets/screenshots/hotel-test-month-july2015.png), [country](../assets/screenshots/hotel-test-country-prt2016.png), [combined slicers](../assets/screenshots/hotel-test-country-segment2016.png), [matrix cells](../assets/screenshots/hotel-test-deposit-matrices-july.png), [final filtering](../assets/screenshots/hotel-test-final-donut-filter.png), [matrix labels](../assets/screenshots/hotel-test-final-matrix-labels.png), [report caveats](../assets/screenshots/hotel-final-caveats.png).
+
+Recheck the recorded workbook comparisons with `python src/check_native_observations.py PATH_TO_WORKBOOK` and openpyxl installed. This reads the source and compares transcribed native observations; it does not automate Power BI or falsely certify runtime interactions.
+
+Desktop Excel remains unavailable. The formula workbook is preserved, but embedded native Power Query connections, PivotTables and Excel refresh remain unverified and unfinished.
+
+## Final export and reopen
+
+On 9 November 2026 the final project was saved, exported to the separate reviewed PBIX, closed and reopened in Power BI Desktop. Arrival-date label, readable caveats and default cleared filters persisted; full cards showed 119,390 bookings, 75,166 checkouts and 44,224 flags with no missing-data warning. Selecting Direct in the reopened market-segment chart produced 12,606 bookings, 10,672 checkouts and 1,934 flags; clearing it restored the full snapshot. [Reopen interaction evidence](../assets/screenshots/hotel-final-reopen-interaction.png).
+
+Final reviewed PBIX SHA256: `e472b23be365317c9856bb6a64d1cb04e2513a6b6067809343411b26cfa6027a`. The original remains unchanged. No Power BI service upload or public interactive hosting is claimed.
