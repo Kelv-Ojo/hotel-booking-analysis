@@ -2,6 +2,8 @@
 
 Prepared materials are complete. The personal recording is not complete: Kelvin needs to rehearse, record his own narration/screen and approve the final take. Do not describe the recording as published until a working video link exists.
 
+The [recording cue card](RECORDING-CUE-CARD.md) is ready for rehearsal. The full spoken script below is approximately 360 words; actual duration and approval still require Kelvin's own recording.
+
 ## Before recording
 
 Use the existing verified monthly outputs; do not refresh the dataset during the recording. Open the repository README, assets/screenshots/peak-month-2016.png, reports/peak_month_2016.json and docs/PEAK-MONTH-CASE-STUDY.md. Close private tabs, notifications and university documents. A webcam is optional. Record a brief audio check before starting. Record at 1080p if the recorder supports it, with readable chart labels and no background music required.
